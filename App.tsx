@@ -6,6 +6,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "./src/screens/LoginScreen";
 import OrganizationScreen from "./src/screens/OrganizationScreen";
 import VotingDetailScreen from './src/screens/VotingDetailScreen';
+import Proposal1 from './src/screens/Proposals/Proposal1';
+import Proposal2 from './src/screens/Proposals/Proposal1';
+import Proposal3 from './src/screens/Proposals/Proposal3';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -13,6 +16,8 @@ type RootStackParamList = {
   LoginScreen: undefined;
   OrganizationScreen: { userPublicKey: Uint8Array };
   VotingDetailScreen: undefined;
+  Proposal1:undefined;
+  Proposal2:undefined;
 };
 
 const App: React.FC = () => {
@@ -58,6 +63,9 @@ const App: React.FC = () => {
         <Stack.Screen name="LoginScreen" component={LoginScreen}/>
         <Stack.Screen name="OrganizationScreen" component={OrganizationScreen}/>
         <Stack.Screen name='VotingDetailScreen' component={VotingDetailScreen}/>
+        <Stack.Screen name="Proposal1" component={Proposal1}/>
+        <Stack.Screen name="Proposal2" component={Proposal2}/>
+        <Stack.Screen name="Proposal3" component={Proposal3}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

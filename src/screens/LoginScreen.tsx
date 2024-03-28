@@ -102,7 +102,7 @@ const saveWalletPublicKey = async (publicKey: Uint8Array) => {
           <View style={styles.modalBackground}>
             <View style={styles.centeredView}>
               <TouchableOpacity style={styles.exitButton} onPress={() => setModalVisible(false)}>
-                <Image source={require('../assets/remove-button.png')} style={styles.exitIcon} />
+                <Image source={require('../assets/close.png')} style={styles.exitIcon} />
               </TouchableOpacity>
               <View style={styles.modalView}>
                 <Image style={styles.phantomIcon} source={require('../assets/phantom_icon.png')} />
@@ -140,26 +140,31 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   button: {
-    margin: 20,
-    backgroundColor: '#36008D',
-    padding: 25,
-    borderRadius: 40,
-    alignItems: 'center',
     flexDirection: 'row',
-    
+    alignItems: 'center',
+    backgroundColor: '#8A2BE2', // Adjust the color to be more vibrant
+    paddingHorizontal: 25, // Sağdan ve soldan boşlukları artırın
+    paddingVertical: 15, // Düğme boyutunu biraz küçültün
+    borderRadius: 30, // Make the corners rounder
+    shadowColor: '#5D3FD3', // Add a shadow to the button as well
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 5 },
+    elevation: 10, // This adds a shadow on Android
   },
   phantomIcon: {
-    height: 40,
-    width: 40,
-    marginRight: 10,
+    width: 30, // Make the icon larger
+    height: 30, // Keep the aspect ratio
+    shadowColor: '#fff',
+    shadowOpacity: 0.5,
+    shadowRadius: 3,
+    shadowOffset: { width: 0, height: 1 },
   },
   buttonText: {
-    fontSize: 25,
+    color: '#FFFFFF',
+    fontSize: 20, // Make the font slightly smaller
     fontWeight: 'bold',
-    color: '#fff',
-    flexDirection: 'row',
-    alignItems: 'center',
-    textAlign: 'center',
+    marginLeft: 10, // Adjust the spacing
   },
   modalBackground: {
     flex: 1,
